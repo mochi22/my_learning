@@ -110,3 +110,66 @@ class Solution:
             maxLength = max(maxLength, right - left + 1)
         
         return maxLength
+    
+
+
+
+### 2nd (解法見たうえでの回答)
+"""
+whileの使い方にとまどった。
+以下はメモ(これくらいは知っとくべきなので暗記しとく)
+
+print(1==1 or 2==1) #True
+print(1==1 or 2!=1) #True
+print(1!=1 or 2==1) #False
+print(1!=1 or 2!=1) #True
+
+print(True or False)  #True
+print(True or True)   #True
+print(False or False) #False
+print(False or True)  #True
+
+print(True and False)  #False
+print(True and True)   #True
+print(False and False) #False
+print(False and True)  #False
+"""
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        sets = {}
+        result=0
+        left=0
+
+        for right in range(len(s)):
+            if s[right] not in sets:
+                sets.add(s[right])
+                result = max(result, right-left+1)
+            else:
+                while s[right] in sets:
+                    print(left, right, sets, s[right], s[left])
+                    sets.remove(s[left])
+                    left +=1
+                sets.add(s[right])
+            print("aaa")
+        return result
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        maps = {} #maps[char]=index
+        left = 0
+        result=0
+
+
+        for right in range(len(s)):
+            # print(left, right, maps, result)
+            # ignore less than left indexes
+            if s[right] not in maps or maps[s[right]] < left:
+                # maps[s[right]] = right
+                result = max(result, right-left+1)
+            else:
+                #left index += 1
+                left= maps[s[right]] + 1 
+            maps[s[right]] = right
+        return result
+
+
