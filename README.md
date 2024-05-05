@@ -13,3 +13,4 @@ https://1kohei1.com/leetcode/
 6. Valid Parentheses
 7. Generate Parentheses
 11. Combination Sum
+12. Permutations
