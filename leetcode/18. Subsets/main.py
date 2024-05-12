@@ -110,3 +110,11 @@ class Solution:
         make_subsets(0, [])
 
         return result
+    
+
+# train_credit_bureau_a_1
+# train_static_0
+# train_person_1
+
+# train_static_cb_0
+# train_applprev_1

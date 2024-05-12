@@ -11,6 +11,14 @@ https://1kohei1.com/leetcode/
 4. Zigzag Conversion
 5. String to Integer (atoi)
 6. Valid Parentheses
+
+### Greedy + Backtracking
 7. Generate Parentheses
 11. Combination Sum
 12. Permutations
+18. Subsets
+
+### HashMap
+(1. Two Sum) <-すでにやってある。
+13. Group Anagrams
+49. Intersection of Two Arrays
