@@ -102,3 +102,30 @@ class Solution:
         result = dummyHead.next
         dummyHead.next = None
         return result
+
+
+# 日にちをあけて解いた
+class Solution:
+    def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+        
+        head = ListNode(None)
+        results = head
+        digits = 0
+        carry = 0
+
+        while l1 or l2 or carry!=0:
+            digit1 = l1.val if l1 is not None else 0
+            digit2 = l2.val if l2 is not None else 0
+            digits = digit1+digit2+carry
+            if digits >= 10:
+                carry=1
+            else:
+                carry=0
+            print("digits%10:", digits%10)
+            results.next = ListNode(digits%10)
+            results = results.next
+            l1 = l1.next if l1 is not None else None
+            l2 = l2.next if l2 is not None else None
+            print(results)
+        # print("head:", head.val, head.next.val, head.next.next.val, head.next.next.next.val)
+        return head.next
